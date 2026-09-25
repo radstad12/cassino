@@ -1,3 +1,0 @@
-import type {GameState} from '../game/types';
-import {legalActions} from '../game/game';
-export function botDecision(s:GameState){const p=s.players[s.currentPlayerIndex];const actions=legalActions(s);if(!p||p.isHuman)return null;const strength=(p.hand.reduce((n,c)=>n+(['A','K','Q','J'].includes(c.rank)?2:1),0)+s.community.length*.5)/5;const r=Math.random();if(actions.includes('raise')&&(p.style==='aggressive'?r<.58:p.style==='wild'?r<.72:r<.24))return {type:'raise' as const,amount:s.currentBet+Math.max(100,Math.floor(s.pot*.55))};;if(actions.includes('call')&&strength>.45&&r>.15)return {type:'call' as const};if(actions.includes('check'))return {type:'check' as const};return {type:'fold' as const};}
