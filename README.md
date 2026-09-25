@@ -1,5 +1,8 @@
-# Neon Noir Poker
+# Neon Noir Poker — česká GitHub Pages verze
 
-Static GitHub Pages build. No npm, Vite, React or build step required.
+Statická verze bez Reactu/Vite/npm. Pro GitHub Pages nastav:
+- Source: Deploy from a branch
+- Branch: main
+- Folder: / (root)
 
-For GitHub Pages use **Deploy from a branch → main → /(root)**.
+`index.html` musí být v kořenu repozitáře.
